@@ -1,0 +1,20 @@
+var gj = {
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "mnimi": "J\u00e4rva maakond", "mkood": "0051" }, "geometry": { "type": "Point", "coordinates": [ 595517.45522951357998, 6532055.599105358123779 ] } },
+{ "type": "Feature", "properties": { "mnimi": "Hiiu maakond", "mkood": "0039" }, "geometry": { "type": "Point", "coordinates": [ 421386.192910684796516, 6528440.713260886259377 ] } },
+{ "type": "Feature", "properties": { "mnimi": "Harju maakond", "mkood": "0037" }, "geometry": { "type": "Point", "coordinates": [ 552427.158590658102185, 6574784.448263509199023 ] } },
+{ "type": "Feature", "properties": { "mnimi": "Saare maakond", "mkood": "0074" }, "geometry": { "type": "Point", "coordinates": [ 415137.813730536203366, 6473272.023431944660842 ] } },
+{ "type": "Feature", "properties": { "mnimi": "J\u00f5geva maakond", "mkood": "0049" }, "geometry": { "type": "Point", "coordinates": [ 641680.871859443723224, 6510804.642225287854671 ] } },
+{ "type": "Feature", "properties": { "mnimi": "L\u00e4\u00e4ne maakond", "mkood": "0057" }, "geometry": { "type": "Point", "coordinates": [ 486458.610609543975443, 6528342.766670934855938 ] } },
+{ "type": "Feature", "properties": { "mnimi": "P\u00f5lva maakond", "mkood": "0065" }, "geometry": { "type": "Point", "coordinates": [ 686817.174211152712815, 6437714.414141654968262 ] } },
+{ "type": "Feature", "properties": { "mnimi": "Tartu maakond", "mkood": "0078" }, "geometry": { "type": "Point", "coordinates": [ 660339.158084622118622, 6472981.664897887967527 ] } },
+{ "type": "Feature", "properties": { "mnimi": "Viljandi maakond", "mkood": "0084" }, "geometry": { "type": "Point", "coordinates": [ 590879.603457150282338, 6467184.450386255979538 ] } },
+{ "type": "Feature", "properties": { "mnimi": "V\u00f5ru maakond", "mkood": "0086" }, "geometry": { "type": "Point", "coordinates": [ 674205.157368659973145, 6404622.514604719355702 ] } },
+{ "type": "Feature", "properties": { "mnimi": "L\u00e4\u00e4ne-Viru maakond", "mkood": "0059" }, "geometry": { "type": "Point", "coordinates": [ 632919.088141454267316, 6571254.703244567848742 ] } },
+{ "type": "Feature", "properties": { "mnimi": "Ida-Viru maakond", "mkood": "0044" }, "geometry": { "type": "Point", "coordinates": [ 690881.19409902987536, 6569048.497580350376666 ] } },
+{ "type": "Feature", "properties": { "mnimi": "P\u00e4rnu maakond", "mkood": "0067" }, "geometry": { "type": "Point", "coordinates": [ 533098.442913969862275, 6473068.541788881644607 ] } },
+{ "type": "Feature", "properties": { "mnimi": "Valga maakond", "mkood": "0082" }, "geometry": { "type": "Point", "coordinates": [ 629085.34459332714323, 6422593.898099803365767 ] } },
+{ "type": "Feature", "properties": { "mnimi": "Rapla maakond", "mkood": "0070" }, "geometry": { "type": "Point", "coordinates": [ 540323.922726205550134, 6531669.714447063393891 ] } }
+]
+};
