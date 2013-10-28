@@ -1,79 +1,695 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>GIS tulevik on JS</title>
+		<meta name="description" content="ESTGIS 2013 konverentsi ettekanne">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Estgis2013 : ESTGIS 2013 konverents" />
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+        
+        <style>
+            .li-label {
+                display:inline-block;
+                width:250px
+            }
+            
+            .gray-out.gray {
+                color:#999!important
+            }
+            img.naked-img {
+                background:none!important;
+                border:none!important;
+                box-shadow:none!important
+            }
+            .green {
+                color:#7CFC00!important
+            }
+            
+        </style>
 
-    <title>Estgis2013</title>
-  </head>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
 
-  <body>
+	<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/sookoll/estgis2013">View on GitHub</a>
+		<div class="reveal">
 
-          <h1 id="project_title">Estgis2013</h1>
-          <h2 id="project_tagline">ESTGIS 2013 konverents</h2>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="img/norra_reis_mv_1.png">
+					<h2>GIS tulevik on <span class="green">js</span></h2>
+                    <p>
+						Mihkel Oviir | <b><span style="color:red">CGI</span> Eesti AS</b>
+					</p>
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<h2>Georevolutsioon.<span class="green">js</span></h2>
+				</section>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/sookoll/estgis2013/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/sookoll/estgis2013/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+				<section data-background="img/norra_reis_mv_1.png">
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;GIS Is Not Dead, It's Coming For You And It's Been Drinking JavaScript&rdquo;
+					</blockquote>
+                    <p>&nbsp;</p>
+                    <p>
+                        Christopher Helm<br>
+                        <small>FOSS4G 2013 (GEO for All), Nottingham</small>
+                    </p>
+                    <aside class="notes">
+						<ul>
+                            <li>GIS on surnud, juba mitmeid aastaid teemaks</li>
+                            <li>foss4g innustus</li>
+                            <li></li>
+                        </ul>
+					</aside>
+				</section>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+                <section data-background="img/norra_reis_mv_1.png">
+                    <img class="naked-img" src="img/cartodb_logo.png">
+                    <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;The Future of CartoDB is JS&rdquo;
+					</blockquote>
+                    <p>&nbsp;</p>
+                    <p>
+                        Andrew W Hill<br>
+                        <small>JS.GEO 2013, Denver</small>
+                    </p>
+                </section>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+				<section data-background="img/norra_reis_mv_1.png">
+					<p>Sõnum</p>
+                    <h2>GIS veebi!</h2>
+                    <h3>(GIS vabaks)</h3>
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<h3>Veeb areneb tohutus tempos</h3>
+                    
+                    <p>&nbsp;</p>
+                    <p class="fragment"><b>midagi juhtub iga päev</b></p>
+                    <aside class="notes">
+						<ul>
+                            <li>Uued platvormid</li>
+                            <li>Uued tehnoloogiad</li>
+                            <li>Uued tööriistad</li>
+                            <li>Uued andmeformaadid</li>
+                            
+                        </ul>
+					</aside>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+                    <h3>Kasutajaskond suureneb...</h3>
+                </section>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+				<section data-background="img/norra_reis_mv_1.png">
+                    <h2>Elu on veebis | veeb on elus</h2>
+                    <aside class="notes">
+                        Märkused siia
+                    </aside>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+                    <img src="img/internet_addiction2.jpg" alt="Internet addiction">
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+                    <img src="img/internet_addiction1.jpg" alt="Internet addiction">
+                </section>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+				<section data-background="img/norra_reis_mv_1.png">
+                    <p>Veebi keskne tehnoloogia on</p>
+					<h2><span class="green">JavaScript</span></h2>
+                    <aside class="notes">
+						<ul>
+                            <li>Mis on JS</li>
+                            <li>veeb ja JS, klient - server</li>
+                        </ul>
+					</aside>
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+                    <img src="img/klient-server.jpg" alt="Klient-server">
+				</section>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+				<section data-background="img/norra_reis_mv_1.png">
+					<h2>HTML5 on <span class="green">JS</span></h2>
+                    <p><small><a href="http://www.html5rocks.com" target="_blank">http://www.html5rocks.com</a></small></p>
+                    <p>Geolocation API</p>
+                    <p>WebGL</p>
+                    <p>WebWorkers</p>
+                    <p>WebSockets</p>
+                    <p>Storage</p>
+                    <p>File API</p>
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<h3>Veeb on muutumas</h3>
+                    <p class="fragment gray-out">Server > Klient</p>
+                    <p class="fragment">Server <= Klient</p>
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<h3><span class="green">JS</span> teeb revolutsiooni serveris</h3>
+                    <p><a href="http://nodejs.org" target="_blank"><img class="naked-img" src="img/node.png"></a></p>
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<img class="naked-img" src="img/phonecap_logo.svg" style="width:180px">
+                    <h3>Phonecap</h3>
+                    <p><span class="green">JS</span> äppid kõikidele platvormidele</p>
+                    <p><a href="http://phonegap.com/" target="_blank">http://phonegap.com</a></p>
+                    <aside class="notes">
+                        <ul>
+                            <li>iPhone, Android, Blackberry, WebOS, Windows Phone, Symbian, Bada</li>
+                        </ul>
+                    </aside>
+				</section>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+				<section data-background="img/norra_reis_mv_1.png">
+					<h2>GIS ja <span class="green">JS</span>?</h2>
+                    <aside class="notes">
+						<ul>
+                            <li>veeb on popp, gis veebis on popp: rohkem kasutajaid, uued turud</li>
+                            <li>kõik on sellest aru saanud: ESRI, MapBox, CartoDB</li>
+                        </ul>
+					</aside>
+				</section>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+				<section data-background="img/norra_reis_mv_1.png">
+					<img class="naked-img" src="img/ol.png">
+                    <h2>OpenLayers</h2>
+                    <a href="http://openlayers.org" target="_blank">http://openlayers.org</a><br>
+                    <a href="http://ol3js.org" target="_blank">http://ol3js.org</a><br>
+                    <a href="demo/ol3/" target="_blank">:demo</a>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<img class="naked-img" src="img/geoext_logo.png">
+                    <h2>GeoExt</h2>
+                    <a href="http://geoext.github.io/geoext2" target="_blank">http://geoext.github.io/geoext2</a>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<img class="naked-img" src="img/leaflet.png">
+                    <h2>Leaflet</h2>
+                    <a href="http://leafletjs.com" target="_blank">http://leafletjs.com</a>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<h2>d3.js</h2>
+                    <a href="http://d3js.org" target="_blank">http://d3js.org</a><br>
+                    <a href="https://github.com/d3/d3-geo-projection" target="_blank">https://github.com/d3/d3-geo-projection</a>
+                </section>
+                
+                <section data-transition="fade" data-background="img/norra_reis_mv_1.png">
+					<img class="naked-img" src="img/stupid_web_mercator.png">
+                    <aside class="notes">
+						<ul>
+                            <li>aafrika on 30 M km<sup>2</sup></li>
+                            <li>gröönimaa on 2 M km<sup>2</sup>: 15 korda väiksem</li>
+                            <li>austraalia on üle 8,5 M km<sup>2</sup>: 4 korda suurem kui gröönimaa</li>
+                        </ul>
+					</aside>
+                </section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<img class="naked-img" src="img/stupid_web_mercator2.png">
+                    <aside class="notes">
+						<ul>
+                            <li>aafrika on 30 M km<sup>2</sup></li>
+                            <li>gröönimaa on 2 M km<sup>2</sup>: 15 korda väiksem</li>
+                            <li>austraalia on üle 8,5 M km<sup>2</sup>: 4 korda suurem kui gröönimaa</li>
+                        </ul>
+					</aside>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<a href="demo/d3/interrupted.html" target="_blank">:demo</a><br>
+                    <a href="demo/d3/projections.html" target="_blank">:demo</a><br>
+                    <a href="demo/d3/adaptive.html" target="_blank">:demo</a>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<img class="naked-img" src="img/kartograph_logo.png">
+                    <h2>Kartograph.org</h2>
+                    <a href="http://kartograph.org/" target="_blank">http://kartograph.org</a><br>
+                    <a href="demo/italia/" target="_blank">:demo</a>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+                    <p style="font-size:1.5em">Punktipilved brauseris</p>
+                    <a href="https://github.com/asalga/XB-PointStream" target="_blank">https://github.com/asalga/XB-PointStream</a><br>
+                    <a href="demo/pointcloud/tahoe.html" target="_blank">:demo</a><br>
+                    <a href="demo/pointcloud/helsinki.html" target="_blank">:demo</a>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<p style="font-size:1.5em">Virtuaalsed maailmad</p>
+                    <p>
+                        <img class="naked-img" src="img/cesium_logo.svg" style="width:280px"><br>
+                        <a href="https://github.com/AnalyticalGraphicsInc/cesium" target="_blank">https://github.com/AnalyticalGraphicsInc/cesium</a>
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>
+                        <img class="naked-img" src="img/owg_logo.png"><br>
+                        <a href="http://www.openwebglobe.org/" target="_blank">http://www.openwebglobe.org</a>
+                    </p>
+                        
+                    <aside class="notes">
+						<ul>
+                            <li>google earth</li>
+                            
+                        </ul>
+					</aside>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<h2>jsts</h2>
+                    <a href="https://github.com/bjornharrtell/jsts" target="_blank">https://github.com/bjornharrtell/jsts</a>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<img class="naked-img" src="img/osmbuildings_logo.png">
+                    <h2>osmbuildings.js</h2>
+                    <a href="https://github.com/kekscom/osmbuildings" target="_blank">https://github.com/kekscom/osmbuildings</a>
+                </section>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+				<section data-background="img/norra_reis_mv_1.png">
+					<h2>GIS formaadid veebis</h2>
+                    <div class="fragment gray-out">
+                        XML ei ole moes<br>
+                        <small>(sorri) <a href="http://www.opengeospatial.org/" target="_blank">OGC</a></small>
+                    </div>
+                    <div class="fragment">
+                        GeoJSON<br>
+                        <small><a href="http://geojson.org/" target="_blank">http://geojson.org/</a></small>
+                    </div>
+                    <div class="fragment">
+                        TopoJSON<br>
+                        <small><a href="https://github.com/mbostock/topojson" target="_blank">https://github.com/mbostock/topojson</a></small>
+                    </div>
+                    <div class="fragment">
+                        TileJSON<br>
+                        <small><a href="https://github.com/mapbox/tilejson-spec" target="_blank">https://github.com/mapbox/tilejson-spec</a></small>
+                    </div>
+					
+				</section>
+                
+				<section data-background="img/norra_reis_mv_1.png">
+					<h3>Eesti haldusjaotus: omavalitsused</h3>
+					<ul>
+                        <li><span class="li-label">SHP</span>: 15 MB / 6,8 MB (zip)</li>
+                        <li><span class="li-label">GeoJSON</span>: 37 MB / 8,6 MB (gzip)</li>
+                        <li><span class="li-label">TopoJSON</span>: <span class="green">1,7</span> MB / <span class="green">227</span> kB (gzip)</li>
+                    </ul>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>
+                        <small><a href="http://geoportaal.maaamet.ee/est/Andmed-ja-kaardid/Haldus-ja-asustusjaotus-p119.html" target="_blank">http://geoportaal.maaamet.ee/est/Andmed-ja-kaardid/Haldus-ja-asustusjaotus-p119.html</a></small>
+                    </p>
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+                    <img src="img/topo.jpg" alt="topo">
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<h3>Binaarsed formaadid</h3>
+                    <div class="fragment">
+                        <p>shapefile.js</p>
+                        <small><a href="https://github.com/calvinmetcalf/shapefile-js" target="_blank">https://github.com/calvinmetcalf/shapefile-js</a><br>
+                        <a href="demo/shp/" target="_blank">:demo</a></small>
+                    </div>
+                    <div class="fragment">
+                        <p>shp-write</p>
+                        <small><a href="https://github.com/mapbox/shp-write" target="_blank">https://github.com/mapbox/shp-write</a></small>
+                    </div>
+                    <div class="fragment">
+                        <p>fileGDB.js</p>
+                        <small><a href="https://github.com/calvinmetcalf/fileGDB.js" target="_blank">https://github.com/calvinmetcalf/fileGDB.js</a></small>
+                    </div>
+                    <div class="fragment">
+                        <p>twkb.js</p>
+                        <small><a href="http://blog.jordogskog.no/2013/04/09/tiny-wkb" target="_blank">http://blog.jordogskog.no/2013/04/09/tiny-wkb</a><br>
+                        <a href="demo/twkb/twkb.html" target="_blank">:demo</a></small>
+                    </div>
+                    <div class="fragment">
+                        <p>MBTiles</p>
+                        <small><a href="http://wiki.openstreetmap.org/wiki/MBTiles" target="_blank">http://wiki.openstreetmap.org/wiki/MBTiles</a></small>
+                    </div>
+				</section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+					<p>... veel <span class="green">JS</span> georevolutsiooni tõestusi ...</p>
+                    <p>&nbsp;</p>
+                    <div class="fragment">
+                        <p><b>Mapserver 7</b></p>
+                        <p><small><span class="green">JS</span> kompleksete sümbolite konstrueerimiseks</small></p>
+                    </div>
+                    <div class="fragment">
+                        <p><b>ZOO-Project</b></p>
+                        <p><small><span class="green">JS</span> WPS teenuste ahelad</small></p>
+                    </div>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+                    <h3>Mõned tegijad, kes teevad kaarte õigesti...</h3>
+                    <ul>
+                        <li>Stamen</li>
+                        <li>MapBox</li>
+                        <li>CartoDB</li>
+                        <li>Axismaps</li>
+                        <li>New York Times</li>
+                        <li>Azavea</li>
+                        <li>Periscopic</li>
+                    </ul>
+                </section>
+                
+                <section data-background="img/norra_reis_mv_1.png">
+                    <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;Possibly best moment in history to work doing geo&rdquo;
+					</blockquote>
+                    <p>&nbsp;</p>
+                    <p>
+                        Javier de la Torre<br>
+                        <small>
+                            Vizzuality<br>
+                            (SIGLibre 2013)
+                        </small>
+                    </p>
+                </section>
+                
+				<section data-transition="fade" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>&nbsp;</p>
+                    <p><small>&nbsp;</small></p>
+                    <div style="height:300px">
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+					</div>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? 
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ?
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 0
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 0
+{} + {} ? 
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 0
+{} + {} ? NaN
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 0
+{} + {} ? NaN
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+Array(16).join("wat" + 1) ?
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 0
+{} + {} ? NaN
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+Array(16).join("wat" + 1) ?
+"wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1"
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 0
+{} + {} ? NaN
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Estgis2013 maintained by <a href="https://github.com/sookoll">sookoll</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+Array(16).join("wat" + 1) ?
+"wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1"
 
-    
+Array(16).join("wat" - 1) ?
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 0
+{} + {} ? NaN
 
-  </body>
+Array(16).join("wat" + 1) ?
+"wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1"
+
+Array(16).join("wat" - 1) + " Batman!" ?
+					</code></pre>
+				</section>
+                
+                <section data-transition="none" data-background="img/norra_reis_mv_1.png">
+					<h2>Aitäh!</h2>
+					<p>mihkel@sookoll.ee</p>
+                    <p>@sookoll</p>
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>Ainult friikidele!</p>
+                    <p><a href="https://www.destroyallsoftware.com/talks/wat" target="_blank"><small>https://www.destroyallsoftware.com/talks/wat</small></a></p>
+                    <pre><code data-trim contenteditable style="height:300px">
+[] + [] ? ""
+[] + {} ? "[object Object]"
+{} + [] ? 0
+{} + {} ? NaN
+
+Array(16).join("wat" + 1) ?
+"wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1"
+
+Array(16).join("wat" - 1) + " Batman!" ?
+"NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman!"
+					</code></pre>
+				</section>
+
+			</div>
+
+		</div>
+        <script src="lib/js/jquery-2.0.3.min.js"></script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+            
+            Reveal.addEventListener( 'customevent', function(e) {
+                //console.log(e);
+            } );
+            
+            Reveal.addEventListener( 'fragmentshown', function( event ) {
+                // event.fragment = the fragment DOM element
+                var el = $(event.fragment).prev();
+                if($(el).hasClass('gray-out')){
+                    $(el).addClass('gray');
+                }
+            } );
+            Reveal.addEventListener( 'fragmenthidden', function( event ) {
+                // event.fragment = the fragment DOM element
+                var el = $(event.fragment).prev();
+                if($(el).hasClass('gray-out')){
+                    $(el).removeClass('gray');
+                }
+            } );
+
+		</script>
+
+	</body>
 </html>
